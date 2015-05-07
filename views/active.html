@@ -1,0 +1,13 @@
+<h1>DO THIS STUFF:</h1>
+
+<ul>
+	<li ng-repeat="task in tasks" ng-hide="task.completed; task.expired">
+		<input ng-model="task.text" ng-change="tasks.$save(task)"/>
+		<button ng-click="complete(task); expired(task)">Archive task</button>
+	</li>
+</ul>
+
+<form ng-submit="addTask()">
+	<input ng-model="newTaskText"/>
+	<button type="submit">Add task</button>
+</form>
